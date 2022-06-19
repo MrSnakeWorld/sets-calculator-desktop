@@ -1,0 +1,54 @@
+@import '../../../style/colors';
+
+.block {
+	position: relative;
+	padding: 0px 0px 1em 0px;
+
+	&:after {
+		content: "";
+		position: absolute;
+		background-color: $dark_add-font-color;
+		bottom: .5em;
+		height: 1px;
+		width: 100%;
+	}
+	&:last-child:after {
+		height: 0;
+	}
+	&__header {
+		// font-size: 1.5rem;
+		padding: .3rem 0rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__content {
+		transition: all .3s ease-in;
+		position: relative;
+
+		visibility: visible;
+		transform: scaleY(1);
+		height: auto;
+		animation-fill-mode: forwards;
+		transform-origin: 50% 0;
+
+		&.hidden {
+			transform: scaleY(0);
+			height: 0;
+			visibility: hidden;
+		}
+
+		&-el {
+			// font-size: 1.2rem;
+			padding: .2rem 0rem;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+
+			span {
+				min-width: 50%;
+			}
+		}
+	}
+
+}

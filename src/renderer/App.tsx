@@ -1,50 +1,42 @@
-import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
-import icon from '../../assets/icon.svg';
-import './App.css';
+import classNames from 'classnames';
+import Creation from './components/Creation/Creation';
+import Operations from './components/Inputs/Operations';
+import Keyboard from './components/Keyboard/Keyboard';
+import {extractKeyboardData} from './store/keyboard/selectors';
+import {extractSetsAsButtons} from './store/sets/selectors';
+import useAppSelector from './tools/utils/hooks/useAppSelector';
+import {useGlobalCtx} from './tools/utils/context/GlobalCtx';
+import './App.scss';
+import './style/fonts.scss';
+import Settings from './components/Settings/Settings';
+import Appbar from './components/Appbar/Appbar';
 
-const Hello = () => {
-  return (
-    <div>
-      <div className="Hello">
-        <img width="200px" alt="icon" src={icon} />
-      </div>
-      <h1>electron-react-boilerplate</h1>
-      <div className="Hello">
-        <a
-          href="https://electron-react-boilerplate.js.org/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              📚
-            </span>
-            Read our docs
-          </button>
-        </a>
-        <a
-          href="https://github.com/sponsors/electron-react-boilerplate"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button type="button">
-            <span role="img" aria-label="books">
-              🙏
-            </span>
-            Donate
-          </button>
-        </a>
-      </div>
-    </div>
-  );
-};
+function App() {
+	const {theme} = useGlobalCtx();
 
-export default function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Hello />} />
-      </Routes>
-    </Router>
-  );
+	const {buttons, visible, isCarouselVisible} = useAppSelector(extractKeyboardData);
+	const setButtons = useAppSelector(extractSetsAsButtons);
+
+	return (
+		<>
+			<Appbar />
+			<div className={classNames('app', theme)}>
+				<Settings />
+				<Creation />
+				<Operations
+					isVisible={!!setButtons.length}
+					isCarouselVisible={isCarouselVisible}
+				/>
+				<Keyboard
+					setButtons={setButtons}
+					isCarouselVisible={isCarouselVisible}
+					buttons={buttons}
+					isVisible={visible}
+				/>
+			</div>
+
+		</>
+	);
 }
+
+export default App;

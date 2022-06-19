@@ -1,0 +1,57 @@
+@import '../../style/colors';
+
+.switch {
+	--speed: 0.2s;
+	--timing: cubic-bezier(0.18, 0.89, 0.35, 1.15);
+	stroke: none;
+
+	&:hover {
+		cursor: pointer;
+		opacity: .7;
+	}
+
+	&__circle {
+		transition: all var(--speed) var(--timing);
+		transform: translate(-19px, 0px);
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5), 0px 2px 2px rgba(0, 0, 0, 0.5);
+
+		&.active {
+			transform: translate(0px, 0px);
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+			&.dark {
+				fill: $dark_active-button;
+			}
+			&.light {
+				fill: $light_active-button;
+			}
+		}
+		&.dark {
+			fill: $dark_inactive-button;
+		}
+		&.light {
+			fill: $dark_inactive-button;
+		}
+	}
+
+	&__body {
+		transition: all var(--speed) var(--timing);
+		opacity: .5;
+		&.active {
+			opacity: .5;
+
+			&.dark {
+				fill: $dark_active-button;
+			}
+			&.light {
+				fill: $light_active-button;
+			}
+		}
+		&.dark {
+			fill: $dark_inactive-button;
+		}
+		&.light {
+			fill: $dark_inactive-button;
+		}
+	}
+}

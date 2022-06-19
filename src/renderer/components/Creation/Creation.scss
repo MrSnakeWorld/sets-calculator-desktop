@@ -1,0 +1,61 @@
+.creation {
+	margin: 2rem 12px 10px 12px;
+	padding: 22px 9px;
+	border-radius: 28px;
+	// height: max-content;
+	overflow-y: scroll;
+	height: 100%;
+	transition: all 0.15s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+	// &.light {
+		// background-color: $light_sets-background;
+	// }
+	// &.dark {
+	// 	background-color: $dark_sets-background;
+	// }
+
+	-ms-overflow-style: none;  /* hide scrollbar in IE and Edge */
+	scrollbar-width: none;  /* hide scrollbar in Firefox */
+
+	&__answer {
+		position: relative;
+		display: flex;
+		// justify-content: center;
+		align-items: center;
+		&::before {
+			text-align: left;
+			content: '';
+			position: absolute;
+			top: 0px;
+			height: 1px;
+			width: 100%;
+			background-color: #CACACA;
+		}
+		&-brackets:first-child {
+			padding-right: 15px;
+		}
+		&-brackets:last-child {
+			padding-left: 15px;
+		}
+	}
+}
+
+@media screen and (max-width: 400px) and (min-width: 301px) {
+
+}
+
+@media screen and (max-width: 300px) {
+
+}
+
+@media screen and (max-height: 850px) and (min-height: 701px) {
+
+}
+
+@media screen and (max-height: 700px) and (min-height: 551px) {
+
+}
+
+@media screen and (max-height: 550px) {
+
+}

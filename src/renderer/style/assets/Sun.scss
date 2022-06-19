@@ -1,0 +1,135 @@
+.sun {
+	--speed: 0.25s;
+	--timing: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	stroke: none;
+
+	&__moon {
+		position: absolute;
+		transition: all var(--speed) var(--timing);		
+
+		&.light {
+			transform: translate(6px, 5.5px) scale(80%) rotate(180deg);
+			opacity: 0;
+		}
+		&.dark {
+			transform: translate(0px, 7px) scale(100%) rotate(360deg);
+			opacity: 1;
+		}
+	}
+	&__circle {
+		position: absolute;
+		transition: all var(--speed) var(--timing);
+		
+		&.light {
+			fill: #FBF55F;
+			opacity: 1;
+		}				
+		&.dark {
+			opacity: 0;
+		}
+	}
+	&__line1 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(0, 8px);
+			opacity: 0;
+		}
+	}
+	&__line2 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(-8px, 8px);
+			opacity: 0;
+		}
+	}
+	&__line3 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(-8px, 0px);
+			opacity: 0;
+		}
+	}
+	&__line4 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(-8px, -8px);
+			opacity: 0;
+		}
+	}
+	&__line5 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(0, -8px);
+			opacity: 0;
+		}
+	}
+	&__line6 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+	
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(8px, -8px);
+			opacity: 0;
+		}
+	}
+	&__line7 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(8px, 0);
+			opacity: 0;
+		}
+	}
+	&__line8 {
+		position: absolute;
+		transition: all calc(var(--speed) / 2) var(--timing);
+		
+		&.light {
+			transform: translate(0);
+			opacity: 1;
+		}				
+		&.dark {
+			transform: translate(8px, 8px);
+			opacity: 0;
+		}
+	}
+}

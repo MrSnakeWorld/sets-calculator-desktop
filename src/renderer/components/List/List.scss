@@ -1,0 +1,32 @@
+.list {
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		div {
+			width: 100%;
+		}
+		
+		.hide-icon {
+			position: relative;
+			right: 1em;
+		}
+	}
+	&__body {
+		transition: all .2s ease-in;
+
+		visibility: visible;
+		transform: scaleY(1);
+		max-height: 200px;
+		animation-fill-mode: forwards;
+		transform-origin: 50% 0;
+
+		&.hidden {
+			transform: scaleY(0);
+			max-height: 0;
+			visibility: hidden;
+		}
+	}
+
+}

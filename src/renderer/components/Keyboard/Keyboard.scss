@@ -1,0 +1,286 @@
+@import '../../style/colors';
+
+.keyboard {
+	border-radius: 33px 33px 0px 0px;
+	width: 100vw;
+	transition: all 0.15s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+	bottom: 0px;
+	top: 100%;
+	position: relative;
+	max-width: 100vw;
+	visibility: hidden;
+
+	&.visible {
+		top: 0%;
+		visibility: visible;
+	}
+
+	&.light {
+		background-color: $light_keyboard-background;
+	}
+	&.dark {
+		background-color: $dark_keyboard-background;
+	}
+
+	&.carousel {
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 60% auto;
+	}
+
+	&__pages {
+		margin: 20px 10px 22px 10px;
+		position: relative;
+
+		@media screen and (max-width: 400px) and (min-width: 301px), (max-height: 750px) and (min-height: 601px) {
+			margin: 19px 10px 22px 10px;
+		}
+
+		@media screen and (max-width: 300px) {
+			margin: 18px 20px 27px 10px;
+		}
+
+		@media screen and (max-height: 700px) {
+			margin: 16px 20px 27px 10px;
+		}
+
+		&-sets {
+			box-sizing: border-box;
+			margin: 8px 0px 0px 0px;
+			min-width: 50%;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+			column-gap: 5px;
+			row-gap: 8px;
+			// height: 100%;
+
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			right: -.75em;
+			box-sizing: content-box;
+			height: 100%;
+			width: 2px;
+			background-color: #CACACA;
+		}
+	}
+
+
+	&__body {
+		padding: 28px 10px 30px 10px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		flex: 1;
+		gap: 5px;
+	}
+}
+
+.button {
+	height: 1.5em;
+	border-radius: 17px;
+	border: 1px solid;
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+
+	&.double {
+		flex: 2.1;
+	}
+
+	&:hover {
+		cursor: pointer;
+		opacity: .7;
+	}
+
+	&:active {
+		border: none;
+		padding: 1px;
+	}
+
+	&.light {
+		border-color: $light_button-border;
+		background-color: $light_button;
+		&.reverse {
+			background-color: $light_reverse-button;
+		}
+		&:active {
+			background-color: $light_pressed-button;
+			&.reverse {
+				background-color: $light_reverse-pressed-button;
+			}
+		}
+	}
+	&.dark {
+		border-color: $dark_button-border;
+		background-color: $dark_button;
+		&.reverse {
+			background-color: $dark_reverse-button;
+		}
+		&:active {
+			background-color: $dark_pressed-button;
+			&.reverse {
+				background-color: $dark_reverse-pressed-button;
+			}
+		}
+	}
+
+	&__img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__text {
+		position: relative;
+		text-align: center;
+		padding: 0px;
+		margin: 5px 10px;
+
+		&.center {
+			position: relative;
+			bottom: .1em;
+		}
+
+		&-long {
+			position: absolute;
+			// font-size: 55% !important;
+			top: -.15em;
+			left: 1em;
+			margin: 0;
+
+			&.bracket {
+				left: .8em;
+			}
+
+			&.reverseLong {
+				left: auto;
+				right: 0.75em;
+
+				&.bracket {
+					right: .8em;
+				}
+
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 400px) and (min-width: 301px) {
+	.keyboard {
+		border-radius: 22px 22px 0px 0px;
+	}
+	.button {
+		border-radius: 15px;
+
+		&__img {
+			min-width: 1em;
+			height: 1.2em;
+		}
+	}
+}
+
+@media screen and (max-height: 850px) and (min-height: 701px) {
+	.keyboard {
+		border-radius: 22px 22px 0px 0px;
+	}
+	.button {
+		border-radius: 15px;
+
+		&__img {
+			min-width: 1em;
+			height: 1.2em;
+		}
+	}
+}
+
+@media screen and (max-width: 300px) {
+	.keyboard {
+		border-radius: 12px 12px 0px 0px;
+	}
+	.button {
+		border-radius: 12px;
+
+		&__img {
+			min-width: 0.4em;
+			width: 1.5em;
+			max-width: 3em;
+			// min-height: 0.6em;
+			// max-height: 0.6em;
+		}
+
+		.back {
+			width: 25px;
+			height: 25px;
+		}
+		.enter {
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+@media screen and (max-height: 700px) and (min-height: 551px) {
+	.keyboard {
+		border-radius: 12px 12px 0px 0px;
+	}
+	.button {
+		border-radius: 12px;
+
+		&__img {
+			min-width: 0.4em;
+			max-height: 0.6em;
+		}
+
+		.back {
+			width: 20px;
+			height: 20px;
+		}
+		.enter {
+			width: 25px;
+			height: 25px;
+		}
+	}
+}
+
+@media screen and (max-height: 550px) {
+	.keyboard {
+		border-radius: 12px 12px 0px 0px;
+	}
+	.button {
+		border-radius: 12px;
+
+		&__img {
+			min-width: 0.4em;
+			max-height: 0.6em;
+		}
+
+		.signs {
+			width: 20px;
+			height: 20px;
+		}
+		.longback {
+			width: 40px;
+			height: 16px;
+		}
+		.back {
+			width: 20px;
+			height: 20px;
+		}
+		.enter {
+			width: 25px;
+			height: 25px;
+		}
+	}
+}

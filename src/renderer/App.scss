@@ -1,0 +1,25 @@
+@import './style/colors';
+
+.app {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100vh - 25px);
+	overflow-y: hidden;
+
+	&.light {
+		background-color: $light_background;
+	}
+
+	&.dark {
+		background-color: $dark_background;
+	}
+}
+
+.debug__button {
+	position: absolute;
+	left: 20px;
+	top: 20px;
+}
+

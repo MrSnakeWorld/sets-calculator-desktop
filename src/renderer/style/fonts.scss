@@ -1,0 +1,135 @@
+@import 'colors';
+
+.main-text {
+	font-family: 'RobotoMono';
+	font-size: clamp(calc(45vh / 10), calc(80% / 10), calc(45vw / 10));
+
+	&.light {
+		color: $light_main-font-color;
+		fill: $light_main-font-color;
+		stroke: $light_main-font-color;
+
+		&.reverse {
+			color: $light_reverse-font-color;
+			fill: $light_reverse-font-color;
+			stroke: $light_reverse-font-color;
+		}
+	}
+	&.dark {
+		color: $dark_main-font-color;
+		fill: $dark_main-font-color;
+		stroke: $dark_main-font-color;
+
+		&.reverse {
+			color: $dark_reverse-font-color;
+			fill: $dark_reverse-font-color;
+			stroke: $dark_reverse-font-color;
+		}
+	}
+	&.icon {
+		height: clamp(calc(45vh / 10), calc(80% / 10), calc(45vw / 10));
+		stroke-width: 1.5px;
+	}
+}
+
+.main-small-text {
+	font-family: 'RobotoMono';
+	font-size: clamp(calc(25vh / 10), calc(50% / 10), calc(25vw / 10));
+
+	&.light {
+		color: $light_main-font-color;
+		fill: $light_main-font-color;
+		stroke: $light_main-font-color;
+
+		&.reverse {
+			color: $light_reverse-font-color;
+			fill: $light_reverse-font-color;
+			stroke: $light_reverse-font-color;
+		}
+	}
+	&.dark {
+		color: $dark_main-font-color;
+		fill: $dark_main-font-color;
+		stroke: $dark_main-font-color;
+
+		&.reverse {
+			color: $dark_reverse-font-color;
+			fill: $dark_reverse-font-color;
+			stroke: $dark_reverse-font-color;
+		}
+	}
+}
+
+.oper-text {
+	font-family: 'RobotoLight';
+	font-size: clamp(calc(25vh / 10), calc(50% / 10), calc(25vw / 10));
+
+	&.light {
+		color: $light_oper-font-color;
+	}
+	&.dark {
+		color: $dark_oper-font-color;
+	}
+}
+
+.settings-header-text {
+	font-family: 'RobotoLight';
+	font-size: clamp(calc(25vh / 10), calc(50% / 10), calc(25vw / 10));
+
+	&.light {
+		color: $light_main-font-color;
+		fill: $light_main-font-color;
+		stroke: $light_main-font-color;
+	}
+	&.dark {
+		color: $dark_main-font-color;
+		fill: $dark_main-font-color;
+		stroke: $dark_main-font-color;
+	}
+}
+
+.settings-main-text {
+	font-family: 'RobotoLight';
+	font-weight: 500;
+	font-size: clamp(calc(20vh / 10), calc(45% / 10), calc(20vw / 10));
+
+	&.light {
+		color: $light_main-font-color;
+		fill: $light_main-font-color;
+		stroke: $light_main-font-color;
+	}
+	&.dark {
+		color: $dark_main-font-color;
+		fill: $dark_main-font-color;
+		stroke: $dark_main-font-color;
+	}
+}
+
+.settings-add-text {
+	font-family: 'RobotoLight';
+	font-size: clamp(calc(20vh / 10), calc(40% / 10), calc(20vw / 10));
+
+	&.light {
+		color: $light_add-font-color;
+	}
+	&.dark {
+		color: $dark_add-font-color;
+	}
+}
+
+.settings-info-text {
+	font-family: 'RobotoLight';
+	font-weight: 500;
+	font-size: clamp(calc(15vh / 10), calc(20% / 10), calc(15vw / 10));
+
+	&.light {
+		color: $light_main-font-color;
+		fill: $light_main-font-color;
+		stroke: $light_main-font-color;
+	}
+	&.dark {
+		color: $dark_main-font-color;
+		fill: $dark_main-font-color;
+		stroke: $dark_main-font-color;
+	}
+}

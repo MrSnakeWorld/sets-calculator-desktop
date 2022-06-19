@@ -1,0 +1,175 @@
+@import '../../style/colors';
+
+.set-input {
+	&__body {
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+
+		&.error {
+			color: $light_error !important;
+			stroke: $light_error !important;
+		}
+
+		&-elem {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: inherit;
+			min-width: min-content;
+			position: relative;
+			z-index: 2;
+		}
+
+		&-setname {
+			min-width: max-content;
+		}
+	}
+
+	&__text {
+		min-width: fit-content;
+		vertical-align: middle;
+		text-align: center;
+		margin: 0px 5px;
+
+		&-left {
+			min-width: max-content;
+			margin: 0px;
+		}
+		&-right {
+			margin: 0px;
+		}
+	}
+}
+
+.operations {
+	&:hover {
+		cursor: pointer;
+		opacity: .7;
+	}
+
+	display: flex;
+	align-items: center;
+	padding: 1em 9px;
+	margin: 12px 12px;
+	border-radius: 28px;
+	min-height: 3em;
+	overflow-x: scroll;
+	overflow-y: hidden;
+
+	&__input {
+		display: flex;
+		flex-direction: column;
+		height: inherit;
+		margin-right: 2em;
+
+		&.error {
+			color: $light_error !important;
+			stroke: $light_error !important;
+		}
+	}
+	&__placeholder {
+		// padding: 22px 9px;
+		height: inherit;
+	}
+
+	&.light {
+		background-color: $light_operations-background;
+	}
+	&.dark {
+		background-color: $dark_operations-background;
+	}
+}
+
+.input {
+	&__body {
+		height: inherit;
+		padding: 0px 2px;
+		margin: 0;
+
+		&.flex {
+			display: flex;
+		}
+		&.empty {
+			min-width: 1em;
+			min-height: 1em;
+			position: relative;
+		}
+	}
+}
+
+.microinput {
+	&__text {
+		&:hover {
+			cursor: pointer;
+			opacity: .7;
+		}
+
+		// height: 1.5em;
+		margin: 0;
+		word-break: break-all;
+		padding: 0px 5px;
+		min-width: max-content;
+		&.separator {
+			padding: 0px 7px 0px 0px;
+		}
+
+		&.empty {
+			padding: 0px 18px 0px 18px;
+
+			&.isShown {
+				padding: 0px 14px 0px 13px;
+			}
+		}
+
+		&.icon {
+			align-items: center;
+		}
+	}
+}
+
+.cursor {
+	animation: blink 0.4s linear infinite alternate;
+	position: relative;
+	bottom: .08em;
+}
+
+@media screen and (max-width: 400px) and (min-width: 301px) {
+
+}
+
+@media screen and (max-width: 300px) {
+
+}
+
+@media screen and (max-height: 850px) and (min-height: 701px) {
+
+}
+
+@media screen and (max-height: 700px) and (min-height: 551px) {
+
+}
+
+@media screen and (max-height: 550px) {
+	.operations {
+		padding: 0px 9px 0px 9px;
+	}
+}
+
+@keyframes blink {
+	0% {
+		opacity: 0;
+	}
+	30% {
+		opacity: 0.5;
+	}
+	50% {
+		opacity: 0.75;
+	}
+	75% {
+		opacity: 1;
+	}
+}

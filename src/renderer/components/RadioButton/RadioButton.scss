@@ -1,0 +1,59 @@
+@import '../../style/colors';
+
+.radio {
+	stroke: none;
+	--speed: 0.2s;
+	--timing: cubic-bezier(0.18, 0.89, 0.35, 1.15);
+	stroke: none;
+
+	&:hover {
+		cursor: pointer;
+		opacity: .7;
+	}
+
+	&__body {
+		&.active {
+			transform: translate(0px, 0px);
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+			&.dark {
+				fill: $dark_active-button;
+			}
+			&.light {
+				fill: $light_active-button;
+			}
+		}
+		&.dark {
+			fill: $dark_inactive-button;
+		}
+		&.light {
+			fill: $dark_inactive-button;
+		}
+	}
+
+	&__circle {
+		transition: all var(--speed) var(--timing);
+		transform: translate(25%, 25%) scale(50%);
+		opacity: 0;
+
+		&.active {
+			transform: translate(0px, 0px) scale(100%);
+			opacity: 1;
+			box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 1px 1px rgba(0, 0, 0, 0.5);
+
+			&.dark {
+				fill: $dark_active-button;
+			}
+			&.light {
+				fill: $light_active-button;
+			}
+		}
+
+		&.dark {
+			fill: $dark_inactive-button;
+		}
+		&.light {
+			fill: $dark_inactive-button;
+		}
+	}
+}
